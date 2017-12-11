@@ -6,7 +6,7 @@
   <%= label_tag "name_on_card_#{payment_method.id}", Spree.t(:name_on_card) %><span class="required">*</span><br />
   <%= text_field_tag "#{param_prefix}[name]",
                      "#{@order.billing_firstname} #{@order.billing_lastname}",
-                     { id: "name_on_card_#{payment_method.id}", 
+                     { id: "name_on_card_#{payment_method.id}",
                        data: { conekta: 'card[name]' } } %>
 </p>
 
@@ -35,7 +35,7 @@
                    { prefix: param_prefix, field_name: 'month', use_month_numbers: true },
                    class: 'required',
                    id: "card_month",
-                   data: { conekta: 'card[exp_month]' } ) %>
+                   data: { conekta: 'card[exp_month]' }) %>
 
   <%= select_year(Date.today,
                   { prefix: param_prefix, field_name: 'year', start_year: Date.today.year, end_year: Date.today.year + 15 },
@@ -52,7 +52,7 @@
                                         class: 'required cardCode',
                                         size: 5,
                                         data: { conekta: 'card[cvc]' } ) %>
-  <%= link_to "(#{Spree.t(:what_is_this)})", spree.content_path('cvv'), target: '_blank', "data-hook" => "cvv_link", id: "cvv_link" %>
+  <%= link_to "(#{Spree.t(:what_is_this)})", spree.cvv_path, target: '_blank', "data-hook" => "cvv_link", id: "cvv_link" %>
 </p>
 
 <% if payment_method.with_installments? %>
@@ -69,7 +69,7 @@
 <%= hidden_field_tag "#{param_prefix}[gateway_payment_profile_id]", '', :id => "gateway_payment_profile_id" %>
 
 <script type="text/javascript">
-    $(function() {
-        Conekta.setPublishableKey('<%= payment_method.preferred_public_auth_token -%>');
-    });
+  $(function() {
+    Conekta.setPublishableKey('<%= payment_method.preferred_public_auth_token %>');
+  });
 </script>

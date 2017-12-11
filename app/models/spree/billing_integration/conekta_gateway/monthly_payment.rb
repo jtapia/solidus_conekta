@@ -4,7 +4,7 @@ module Spree
     preference :public_auth_token, :string
     preference :source_method, :string, default: 'card'
 
-    unless Rails::VERSION::MAJOR == 4
+    unless Rails::VERSION::MAJOR >= 4
       attr_accessible :preferred_auth_token, :preferred_public_auth_token, :preferred_source_method, :gateway_response
     end
 

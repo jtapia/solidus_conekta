@@ -5,13 +5,13 @@ module SolidusConekta
       class_option :auto_run_migrations, type: :boolean, default: false
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "\n//= require spree/frontend/soldius_conekta\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "\n//= require spree/backend/soldius_conekta\n"
+        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "\n//= require spree/frontend/solidus_conekta\n"
+        append_file 'vendor/assets/javascripts/spree/backend/all.js', "\n//= require spree/backend/solidus_conekta\n"
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', "\n *= require spree/frontend/soldius_conekta\n", before: /\*\//, verbose: true
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', "\n *= require spree/backend/soldius_conekta\n", before: /\*\//, verbose: true
+        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', "\n *= require spree/frontend/solidus_conekta\n", before: /\*\//, verbose: true
+        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', "\n *= require spree/backend/solidus_conekta\n", before: /\*\//, verbose: true
       end
 
       def add_migrations
