@@ -1,3 +1,5 @@
+require 'oj'
+
 module Spree::Conekta
   module Client
     CONEKTA_API = 'https://api.conekta.io/'
