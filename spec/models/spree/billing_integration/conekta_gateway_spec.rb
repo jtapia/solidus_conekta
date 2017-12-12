@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Spree::BillingIntegration::Conekta, type: :model do
+describe Spree::BillingIntegration::ConektaGateway do
   context 'When Spree::Config[:auto_capture] is set to true' do
     before do
       Spree::Config[:auto_capture] = true

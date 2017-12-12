@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe Spree::BillingIntegration::ConektaGateway::MonthlyPayment, type: :model do
+describe Spree::BillingIntegration::ConektaGateway::MonthlyPayment do
   describe '#provider_class' do
-    specify { expect(subject.provider_class).to eq Spree::Conekta::MonthlyPaymentProvider }
+    specify { expect(subject.provider_class).to eq Spree::Conekta::Provider }
   end
 
   describe '#payment_source_class' do
@@ -14,7 +14,7 @@ RSpec.describe Spree::BillingIntegration::ConektaGateway::MonthlyPayment, type: 
   end
 
   describe '#auto_capture?' do
-    specify { expect(subject.auto_capture?).to eq(false) }
+    specify { expect(subject.auto_capture?).to eq(true) }
   end
 
   describe '#method_type' do

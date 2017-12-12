@@ -7,10 +7,10 @@ module Spree::Conekta
     attr_reader :options
 
     PAYMENT_SOURCES = {
-        'card' => Spree::Conekta::PaymentSource::Card,
-        'banorte' => Spree::Conekta::PaymentSource::Bank,
-        'spei' => Spree::Conekta::PaymentSource::Bank,
-        'oxxo' => Spree::Conekta::PaymentSource::Cash
+      'card' => Spree::Conekta::PaymentSource::Card,
+      'banorte' => Spree::Conekta::PaymentSource::Bank,
+      'spei' => Spree::Conekta::PaymentSource::Bank,
+      'oxxo' => Spree::Conekta::PaymentSource::Cash
     }
 
     def initialize(options = {})
@@ -55,7 +55,7 @@ module Spree::Conekta
 
     def build_common(amount, gateway_params)
       if source_method == Spree::Conekta::PaymentSource::Cash && gateway_params[:currency] != 'MXN'
-        return build_common_to_cash(amount, gateway_params) 
+        return build_common_to_cash(amount, gateway_params)
       else
         {
           'amount'               => amount,
@@ -119,7 +119,7 @@ module Spree::Conekta
         'tracking_id'  => traking_id
       }
     end
-    
+
     def build_common_to_cash(amount, gateway_params)
       amount_exchanged = Spree::Conekta::Exchange.new(amount, gateway_params[:currency]).amount_exchanged
       {

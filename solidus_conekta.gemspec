@@ -1,4 +1,4 @@
-$:.push File.expand_path("../lib", __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
 require 'solidus_conekta/version'
@@ -15,16 +15,33 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,models,db,lib}/**/*'] + %w(MIT-LICENSE Rakefile README.md)
 
-  s.add_dependency 'solidus_backend', ['>= 1.0', '< 3']
-  s.add_dependency 'solidus_support'
-  s.add_dependency 'deface', '~> 1.0'
+  solidus_version = ['>= 1.2.0', '< 3']
 
-  s.add_dependency 'oj'
-  s.add_dependency 'faraday'
-  s.add_dependency 'typhoeus'
-  s.add_dependency 'faraday_middleware'
-  s.add_dependency 'activemerchant'
-  s.add_dependency 'coffee-rails'
-  s.add_dependency 'celluloid'
-  s.add_dependency 'jbuilder'
+  s.add_dependency 'solidus_core', solidus_version
+  s.add_dependency 'solidus_support', '>= 0.1.3'
+  s.add_dependency 'devise', '~> 4.1'
+  s.add_dependency 'deface', '~> 1.0'
+  s.add_dependency 'oj', '~> 3.0'
+
+  s.add_development_dependency 'faraday', '~> 0.8'
+  s.add_development_dependency 'typhoeus', '~> 0.6'
+  s.add_development_dependency 'faraday_middleware', '~> 0.10'
+  s.add_development_dependency 'activemerchant', '~> 1.48', '!= 1.58.0', '!= 1.59.0'
+  s.add_development_dependency 'coffee-rails', '~> 4.2'
+  s.add_development_dependency 'celluloid', '~> 0.16'
+  s.add_development_dependency 'jbuilder', '~> 2.6'
+  s.add_development_dependency 'byebug'
+  s.add_development_dependency 'capybara', '~> 2.4.4'
+  s.add_development_dependency 'database_cleaner', '~> 1.3'
+  s.add_development_dependency 'factory_bot', '~> 4.5'
+  s.add_development_dependency 'ffaker', '>= 1.25.0'
+  s.add_development_dependency 'poltergeist', '~> 1.5'
+  s.add_development_dependency 'pry-rails', '>= 0.3.0'
+  s.add_development_dependency 'rubocop', '>= 0.24.1'
+  s.add_development_dependency 'rspec-rails', '~> 3.1'
+  s.add_development_dependency 'simplecov', '~> 0.9'
+  s.add_development_dependency 'capybara-webkit'
+  s.add_development_dependency 'selenium-webdriver'
+  s.add_development_dependency 'vcr'
+  s.add_development_dependency 'chromedriver-helper'
 end
