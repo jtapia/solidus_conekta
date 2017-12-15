@@ -3,6 +3,7 @@ module Spree
     #HACK
     Spree::Conekta
     Spree::Conekta::Response
+    Spree::Conekta::PaymentSource
     Spree::Conekta::PaymentSource::Card
     Spree::Conekta::PaymentSource::Bank
     Spree::Conekta::PaymentSource::Cash

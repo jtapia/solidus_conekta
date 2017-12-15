@@ -89,6 +89,7 @@ PATH
   specs:
     solidus_conekta (1.1.1)
       activemerchant (~> 1.48, != 1.59.0, != 1.58.0)
+      celluloid (~> 0.16)
       deface (~> 1.0)
       devise (~> 4.1)
       faraday (~> 0.8)
@@ -483,7 +484,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.4.4)
   capybara-webkit
-  celluloid (~> 0.16)
   chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner (~> 1.3)

@@ -39,7 +39,7 @@ describe Spree::Conekta::Customer do
     end
 
     it 'adds a credit card to te customer' do
-      credit_cards.should_receive(:add).with(token)
+      expect(credit_cards).to receive(:add).with(token)
       subject.add_credit_card(token)
     end
   end

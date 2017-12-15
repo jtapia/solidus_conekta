@@ -17,8 +17,8 @@ describe Spree::Conekta::PaymentNotificationHandler do
     subject { described_class.new(notification, 1) }
 
     it 'runs the given action after a given time' do
-      Spree::Payment.should_receive(:find_by_order_number).with('foobar').and_return payment
-      payment.should_receive :capture!
+      expect(Spree::Payment).to receive(:find_by_order_number).with('foobar').and_return payment
+      expect(payment).to receive :capture!
 
       subject.perform_action
       sleep 2

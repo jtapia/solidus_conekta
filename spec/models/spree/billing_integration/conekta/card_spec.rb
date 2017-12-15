@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Spree::BillingIntegration::ConektaGateway::Card do
-  describe '#provider_class' do
-    specify { expect(subject.provider_class).to eq Spree::Conekta::Provider }
+  describe '#gateway_class' do
+    specify { expect(subject.gateway_class).to eq Spree::Conekta::Provider }
   end
 
   describe '#payment_source_class' do

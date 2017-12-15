@@ -26,9 +26,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'typhoeus', '~> 0.6'
   s.add_dependency 'faraday_middleware', '~> 0.10'
   s.add_dependency 'activemerchant', '~> 1.48', '!= 1.58.0', '!= 1.59.0'
+  s.add_dependency 'celluloid', '~> 0.16'
 
   s.add_development_dependency 'coffee-rails', '~> 4.2'
-  s.add_development_dependency 'celluloid', '~> 0.16'
   s.add_development_dependency 'jbuilder', '~> 2.6'
   s.add_development_dependency 'byebug'
   s.add_development_dependency 'capybara', '~> 2.4.4'

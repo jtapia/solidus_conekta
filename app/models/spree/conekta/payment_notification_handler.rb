@@ -1,5 +1,3 @@
-require 'celluloid'
-
 module Spree
   module Conekta
     class PaymentNotificationHandler
