@@ -47,6 +47,7 @@ jQuery ->
       $('select, input', form).is("[data-conekta='monthly_installments']")
 
     submitForm: ->
+      @form.find("li:not(#payment_method_#{@currentMethod})").remove()
       @form.off('submit')
       @form.submit()
 

@@ -18,7 +18,7 @@ module Spree
       end
     else
       def gateway_class
-       Spree::Conekta::Provider
+        Spree::Conekta::Provider
       end
 
       def partial_name
