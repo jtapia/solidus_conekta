@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 gem 'solidus', github: 'solidusio/solidus', branch: branch
@@ -11,9 +11,9 @@ else
   gem 'rails_test_params_backport', group: :test
 end
 
-gem 'pg'
 gem 'sqlite3'
-gem 'mysql2'
+gem 'pg', '~> 0.21'
+gem 'mysql2', '~> 0.4.10'
 
 group :development, :test do
   gem 'i18n-tasks', '~> 0.9' if branch == 'master'
